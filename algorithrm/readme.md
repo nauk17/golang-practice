@@ -7,3 +7,8 @@
       sumNotPrimes += j
  resl = N * (N + 1) / 2 - sumNotPrimes
  ```
+ 
+ 2. Run
+ ```go
+ go run main.go -n=2000000
+ ```
