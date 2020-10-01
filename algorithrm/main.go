@@ -35,5 +35,5 @@ func main() {
 	// fmt.Println(sumNotPrimes)
 	resl := n*(n+1)/2 - sumNotPrimes
 
-	fmt.Println(resl)
+	fmt.Println(resl - 1)
 }
