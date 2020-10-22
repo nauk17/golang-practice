@@ -6,7 +6,64 @@ import (
 	"math"
 )
 
-func main() {
+//           #
+//         # # #
+//       # # # # #
+//     # # # # # # #
+//   # # # # # # # # #
+// # # # # # # # # # # #
+func shape1(n int) {
+	for i := 0; i < n; i++ {
+		for j := 0; j < n*2; j++ {
+			if j >= (n-1)-i && j <= (n-1)+i {
+				fmt.Print("#")
+			} else {
+				fmt.Print(" ")
+			}
+		}
+		fmt.Println()
+	}
+}
+
+// # # # # # # # # # # #
+//   # # # # # # # # #
+// 	   # # # # # # #
+//       # # # # #
+//         # # #
+//           #
+func shape2(n int) {
+	for i := 0; i < n; i++ {
+		for j := 0; j < n*2; j++ {
+			if j >= i && j <= n*2-i-2 {
+				fmt.Print("#")
+			} else {
+				fmt.Print(" ")
+			}
+		}
+		fmt.Println()
+	}
+}
+
+// # # # # # # # # # # #
+// # # # # #   # # # # #
+// # # # #       # # # #
+// # # #           # # #
+// # #               # #
+// #				   #
+func shape3(n int) {
+	for i := 0; i < n; i++ {
+		for j := 0; j < n*2-1; j++ {
+			if j <= (n-1)-i || j >= (n-1)+i {
+				fmt.Print("#")
+			} else {
+				fmt.Print(" ")
+			}
+		}
+		fmt.Println()
+	}
+}
+
+func sumOfPrimes() {
 	nPtr := flag.Int64("n", 2000000, "Text to parse.")
 	flag.Parse()
 
@@ -36,4 +93,8 @@ func main() {
 	resl := n*(n+1)/2 - sumNotPrimes
 
 	fmt.Println(resl - 1)
+}
+
+func main() {
+	shape1(6)
 }
